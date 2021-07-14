@@ -10,15 +10,24 @@
 * Infrastructure as Code & Gestionnaire de configurations
 		* event driven infrastruture
 
+<br>
+
 * Appelé Salt
 
+<br>
+
 * Acquis par VMWare en 2020
+
+<br>
 
 * Vrai fonctionnement de communauté :
 		https://github.com/saltstack/community
 
+<br>
+
 Site : https://docs.saltproject.io/
 Doc pdf : https://docs.saltproject.io/en/pdf/Salt-3003.1.pdf
+Github : https://github.com/saltstack/salt
 
 ------------------------------------------------------------------
 
@@ -44,7 +53,9 @@ Doc pdf : https://docs.saltproject.io/en/pdf/Salt-3003.1.pdf
 
 <br>
 
-* principe client serveur
+* principe master/agent
+		* ou salt-ssh (agentless)
+		* ou masterless (sans master)
 
 * utilisation d'une queue de message ZeroMQ
 
