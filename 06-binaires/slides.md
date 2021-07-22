@@ -7,91 +7,102 @@
 
 <br>
 
-SALT-KEY
+Salt-key
 
-	* sur master
+		> management des clefs / des minions
 
-	* management des clefs
-			* unaccepted
-			* accepted
-			* rejected
-			* denied
+<br>
 
-	* acceptation/suppression des minions
+Salt-api
 
-	* génération de clef
+		> permet le management par entrypoint via une API
+				* REST, xmlrpc, webosocket
 
-	* vérification du fingerprint 
+<br>
 
-	* -l / -L > list clef pour un ou tous les minions
+Salt-call
 
-	* -a / -A > accepte 1 ou tous les minions en pending
+		> pour lancer un run localement sur un minion
 
-	* -p / -P > affiche une clef publique
+<br>
 
-	* -d / -D > supprime une clef ou toutes (attention)
+Salt
 
-	* -f / -F > affiche un ou les fingerprint
-	
+		> pincipale commande pour lancer les run distants via les minions
 
----------------------------------------------------------------------------
+<br>
+
+Salt-cloud 
+
+		> permet de faire du provisionning dans le cloud
+
+--------------------------------------------------------------------------
 
 # SALT : Principaux Binaires
 
 <br>
 
-SALT
+Salt-cp
 
-	* jouer des modules, fonctions
+		> pour copier 1 ou plusieurs fichiers via les minions
 
-	* jouer les states
+<br>
 
-	* filtrer les targets
-			* -E : regexp pcre
-			* -G : par grains
-			* -C : en combinaison
-			* -L : passer une liste
-			* -S : sélection sur le cidr
+Salt-extend
 
-	* `salt '*' module.fonction args`
+		> pour ajouter des modules, faire des tests sur les modules
 
-	* --output : 
-			* raw : en ligne
-			* json : format json
-			* yaml : format yaml
-			* quiet : mode silencieux
-			* nested : par défaut
+<br>
 
-	* --state-output : mode d'affichage des states dans l'output
-			* none : default
-			* full : tout
-			* change : juste les changements
-			* ...
+Salt-master
 
-	* --log-file : où loguer
+		> binaire spécifique aux master
 
-	* --async : lancement en mode asynchrone
+<br>
 
-	* -b / --batch : préciser le nombre de minionspar cycle
+Salt-minion
 
-	* --return : où envoyer l'output
-			* elasticsearch
-			* couchbase
-			* cassandra
-			* postgresql
-			* sentry
-			* slack
-			* sms...
+		> binaire spécifique aux minions
 
-	* -t : préciser un timeout
+<br>
 
-	* --args-separator : préciser le séparateur d'arguments
+Salt-proxy
 
-	* -l : le log level
-			* all
-			* debug
-			* info
-			* error
-			* warning (default)
+		> permet de recevoir des commandes d'un salt master
+			et les faits tourner sur une cible ne pouvant 
+			faire tourner un minion
 
+--------------------------------------------------------------------------
+
+# SALT : Principaux Binaires
+
+<br>
+
+Salt-run 
+
+		> permet de faire tourner des modules spécifiquement sur le master
+
+<br>
+
+Salt-ssh
+
+		> pour utiliser un mode ssh (ansible like)
+
+<br>
+
+Salt-syndic
+
+		> minion capable de faire passer des comamndes venant d'un master (à d'autres minions)
+
+<br>
+
+Salt-unity 
+
+		> simple wraper pour utiliser les binaires salt
+
+<br>
+
+Spm 
+
+		> permet de packager les modules (embarquer avec les formules)
 
