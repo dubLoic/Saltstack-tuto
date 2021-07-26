@@ -120,5 +120,54 @@ LIST
 sudo salt -L 'salt1,salt3' test.ping
 ```
 
+-------------------------------------------------------------------------------
+
+# SALT : Targeting
 
 
+<br>
+
+GRAINS
+
+* liste de grains
+
+```
+sudo salt '*' grains.items
+sudo salt '*' grains.item nodename
+```
+
+* application d'un filtre
+
+```
+sudo salt -G 'nodename:salt1' cmd.run hostname
+```
+
+* filtre incluant du glob
+
+```
+sudo salt -G 'nodename:salt*' cmd.run hostname
+sudo salt -G 'nodename:salt[0-2]' cmd.run hostname
+```
+
+-------------------------------------------------------------------------------
+
+# SALT : Targeting
+
+COMPOUND
+
+
+<br>
+
+* simple ET
+
+```
+sudo salt -C 'G@oscodename:focal and E@salt[0-2]' cmd.run hostname
+```
+
+<br>
+
+* avec négation NOT et OU
+
+```
+sudo salt -C 'G@nodename:salt4 or not E@salt[0-2]' cmd.run hostname
+```
