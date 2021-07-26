@@ -1,1 +1,8 @@
 CheatSheet : https://github.com/eon01/SaltStackCheatSheet
+
+
+sudo salt 'salt2' sys.list_functions saltutil
+saltutil.pillar_refresh
+saltutil.sync_all
+
+
