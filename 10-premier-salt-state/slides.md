@@ -26,6 +26,14 @@ Salt :
 * SLS = SaLt State file
 		* format yaml
 
+* attention : 
+		* modules et fonctions spécifiques
+
+```
+sudo salt 'salt3' sys.list_state_modules
+sudo salt 'salt3' sys.list_state_functions pkg
+```
+
 <br>
 
 * se joue de haut en bas
@@ -34,9 +42,9 @@ Salt :
 
 * file_roots : localisation des fichiers SLS
 
-<br>
+----------------------------------------------------------------------------------------
 
-* base : environnement par défaut
+# SALT : Premier SaLt State
 
 <br>
 
@@ -51,7 +59,9 @@ file_roots:
     ...
 ```
 
-Note: restart du master
+Notes: 
+		* restart du master
+		* base = environement par défaut
 
 ----------------------------------------------------------------------------------------
 
