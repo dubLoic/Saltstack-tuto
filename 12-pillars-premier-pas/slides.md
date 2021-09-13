@@ -29,7 +29,7 @@ Salt :
 
 * données sensibles : les données sont fournies uniquement aux minions targetés
 
-* données arbitraires : des donénes communes à des groupes etc
+* données arbitraires : des données communes à des groupes etc
 
 
 ------------------------------------------------------------------
