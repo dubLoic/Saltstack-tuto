@@ -18,7 +18,7 @@
 => TOP.SLS
 
 
-sudo salt 'salt*' state.highstate test=true
+sudo salt 'salt\*' state.highstate test=true
 
 ----------------------------------------------------------------------------------------------------
 
@@ -33,6 +33,12 @@ sudo salt 'salt*' state.highstate test=true
 * intérêt ? jouer salt sans se poser de questions sur 
 		qu'est-ce qui tourne où ?
 			* idem ansible playbook
+
+----------------------------------------------------------------------------------------------------
+
+
+# SALT : HighState et Top.sls
+
 
 /srv/
 ├── pillar
