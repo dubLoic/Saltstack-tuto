@@ -38,6 +38,12 @@ Check file exist:
     name: /etc/hosts
 ```
 
+---------------------------------------------------------------------------
+
+# SALT : States File - part 1
+
+<br>
+
 * créer un fichier avec récersivité
 
 ```
@@ -59,6 +65,12 @@ Create xavki.txt file:
 Rq : autres paramètres atime/mtime
 
 
+---------------------------------------------------------------------------
+
+# SALT : States File - part 1
+
+<br>
+
 * renommer ou pousser
 
 ```
@@ -68,6 +80,12 @@ Rename xavki file:
     makedirs: true
     source: /tmp/mydir/xavki.txt
 ```
+
+---------------------------------------------------------------------------
+
+# SALT : States File - part 1
+
+<br>
 
 * commenter des lignes
 
@@ -79,6 +97,12 @@ Comment /etc/hosts
     - char: "#"
     - backup: ".bck"
 ```
+
+---------------------------------------------------------------------------
+
+# SALT : States File - part 1
+
+<br>
 
 * décommenter /etc/hosts
 
@@ -92,3 +116,73 @@ Comment /etc/hosts :
 ```
 
 
+---------------------------------------------------------------------------
+
+# SALT : States File - part 1
+
+<br>
+
+* décoder un contenu dans un fichier
+
+```
+Decode in xavki.txt :
+  file.decode:
+    - name: /tmp/xavki.txt
+    - encoding_type: base64
+    - encoded_data: |
+        eGF2a2kK
+```
+
+---------------------------------------------------------------------------
+
+# SALT : States File - part 1
+
+<br>
+
+ou via un pillar
+
+```
+Decode in xavki.txt :
+  file.decode:
+    - name: /tmp/xavki.txt
+    - encoding_type: base64
+    - contents_pillar: test:value
+```
+
+```
+vagrant@salt1:~$ sudo cat /srv/pillar/base/test.sls
+test:
+  value: "eGF2a2kK"
+```
+
+---------------------------------------------------------------------------
+
+# SALT : States File - part 1
+
+<br>
+
+* création d'un répertoire et ses droits
+
+```
+Create xavki directory in /tmp :
+  file.directory:
+    - name: /tmp/xavki
+    - user: vagrant
+    - group: vagrant
+    - mode: 755
+```
+
+* Avec récursivité
+
+```
+Create xavki directory in /tmp :
+  file.directory:
+    - name: /tmp/xavki
+    - user: vagrant
+    - group: vagrant
+    - mode: 755
+    - file_mode: 644
+    - recurse:
+      - user
+      - mode
+```
