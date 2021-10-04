@@ -30,20 +30,42 @@ Objectifs ?
 
 <br>
 
+* première utilisation de file.managed
+
+```
 List user in file:
   file.managed:
     - name: /tmp/users.txt
     - contents: |
         test
+```
+
+
+---------------------------------------------------------------------------
+
+# SALT : States File - Template - part 2
+
+
 
 <br>
 
+* utilisation d'un fichier source et copie sur la machine distante
+
+```
 List user in file:
   file.managed:
     - name: /tmp/users.txt
     - source: salt://users/test.txt
+```
+
+---------------------------------------------------------------------------
+
+# SALT : States File - Template - part 2
+
 
 <br>
+
+* utilisation d'un format template avec une valeur par défaut
 
 ```
 List user in file:
@@ -57,7 +79,14 @@ List user in file:
             password: mypassword
 ```
 
+---------------------------------------------------------------------------
+
+# SALT : States File - Template - part 2
+
+
 <br>
+
+* utilisation d'un pillar dans le contexte
 
 ```
 List user in file:
@@ -73,7 +102,14 @@ List user in file:
         users: {{ pillar['users'] }}
 ```
 
+---------------------------------------------------------------------------
+
+# SALT : States File - Template - part 2
+
+
 <br>
+
+* contenu du fichier de template
 
 ```
 {% for user_name,user_specs in users.items() %}
