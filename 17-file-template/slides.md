@@ -23,6 +23,8 @@ Objectifs ?
 
 	* utilisation de templates
 
+Templates + Variables (pillars, grains ou autres) = Fichier final
+
 ---------------------------------------------------------------------------
 
 # SALT : States File - Template - part 2
