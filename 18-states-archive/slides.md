@@ -100,7 +100,8 @@ Quelques paramètres :
 
 sudo mkdir -p /srv/salt/base/arch/files
 
-wget https://github.com/prometheus/node_exporter/releases/download/v1.2.2/node_exporter-1.2.2.linux-amd64.tar.gz
+wget https://github.com/prometheus/node_exporter/
+releases/download/v1.2.2/node_exporter-1.2.2.linux-amd64.tar.gz
 
 sudo mv node_exporter-1.2.2.linux-amd64.tar.gz /srv/salt/base/arch/files/
 
@@ -221,9 +222,11 @@ Move binary:
 Push node exporter:
   archive.extracted:
     - name: /tmp/
-    - source: https://github.com/prometheus/node_exporter/releases/download/v1.2.2/node_exporter-{{ node_exporter_version }}.tar.gz
+    - source: https://github.com/prometheus/node_exporter/
+releases/download/v1.2.2/node_exporter-{{ node_exporter_version }}.tar.gz
     - if_missing: /usr/local/bin/node-exporter
-    - source_hash: https://github.com/prometheus/node_exporter/releases/download/v1.2.2/sha256sums.txt
+    - source_hash: https://github.com/prometheus/node_exporter/
+releases/download/v1.2.2/sha256sums.txt
     - source_hash_name: node_exporter-1.2.2.linux-amd64.tar.gz
 ```
 
