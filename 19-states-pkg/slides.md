@@ -15,7 +15,7 @@ Objectifs ?
 
 		* installer des paquets
 
-		* isntaller des dépôts
+		* installer des dépôts
 
 		* multi OS
 

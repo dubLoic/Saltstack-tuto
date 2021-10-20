@@ -1,0 +1,6 @@
+{% for user_name,user_specs in users.items() %}
+{{ user_name }}
+{%  for spec_key,spec_value in user_specs.items() %}
+{{    spec_key }} >> {{ spec_value }}
+{%  endfor %}
+{% endfor %}
