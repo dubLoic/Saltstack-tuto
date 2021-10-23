@@ -1,7 +1,22 @@
-CheatSheet : https://github.com/eon01/SaltStackCheatSheet
+%title: APPRENDRE SALT
+%author: xavki
+
+
+# SALT : Map Jinja
+
+<br>
+
+Abonnez-vous et soutenez la chaine Xavki !!!
+
+<br>
+
+vagrant@salt1:~$ cat /etc/salt/master.d/nodegroups.conf 
+nodegroups:
+  nodeexporter: 'salt*'
 
 
 
+Set mine on minion:
   file.managed:
     - name: /etc/salt/minion.d/mine.conf
     - contents: |
