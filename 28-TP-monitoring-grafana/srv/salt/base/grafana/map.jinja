@@ -1,0 +1,7 @@
+{% set grafana_config = salt.pillar.get('grafana_config',{
+  "grafana_repo_url": "deb https://packages.grafana.com/oss/deb stable main",   
+  "grafana_repo_key": "https://packages.grafana.com/gpg.key"
+},merge = True) %}
+
+{% set grafana = salt['pillar.get']('grafana') %}
+

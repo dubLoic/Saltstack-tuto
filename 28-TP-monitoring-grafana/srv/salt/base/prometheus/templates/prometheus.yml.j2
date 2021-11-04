@@ -1,0 +1,20 @@
+#jinja2: lstrip_blocks: "True"
+global:
+  scrape_interval: "{{ prometheus.default_scrape_interval }}"
+  evaluation_interval: 5s
+
+scrape_configs:
+  - job_name: prometheus
+    scrape_interval: 5m
+    static_configs:
+      - targets: ['127.0.0.1:9090']
+
+{% if prometheus.config_node_exporter_enabled %}
+  - job_name: node_exporter
+    scrape_interval: 15s
+    static_configs:
+    - targets:
+{%- for server_ip in salt['mine.get'](tgt='node-exporter',tgt_type='nodegroup',fun='ip_address').values() %}
+      - {{ server_ip }}:9100
+{%- endfor %}
+{% endif %}
