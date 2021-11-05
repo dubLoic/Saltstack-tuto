@@ -1,5 +1,7 @@
 # FORMATION SALSTACK ET TUTORIELS
 
+BLOG : https://xavki.blog/saltstack-formation-et-tutoriels-gratuits/
+
 Playlist : https://www.youtube.com/playlist?list=PLn6POgpklwWqquh9WtO9jVwOU0-RwQIex
 
 - 1. [SALT - 01. Introduction](https://www.youtube.com/watch?v=yfDbMSZfwGs)
