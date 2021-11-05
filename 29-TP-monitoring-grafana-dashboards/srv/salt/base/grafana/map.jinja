@@ -1,0 +1,10 @@
+{% set grafana_config = salt.pillar.get('grafana_config',{
+  "grafana_repo_url": "deb https://packages.grafana.com/oss/deb stable main",   
+  "grafana_repo_key": "https://packages.grafana.com/gpg.key"
+},merge = True) %}
+{% set grafana_dashboards = salt.pillar.get('grafana_dashboard',{
+  "node-exporter": "https://raw.githubusercontent.com/rfrail3/grafana-dashboards/master/prometheus/node-exporter-full.json",
+  "node-exporter-2": "https://raw.githubusercontent.com/rfrail3/grafana-dashboards/master/prometheus/node-exporter-full.json"
+},merge = True) %}
+{% set grafana = salt['pillar.get']('grafana') %}
+
